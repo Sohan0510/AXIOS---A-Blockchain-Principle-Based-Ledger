@@ -1,0 +1,25 @@
+{
+  "name": "witness",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "witness1": "cross-env PORT=7001 node server.js",
+    "witness2": "cross-env PORT=7002 node server.js",
+    "witness3": "cross-env PORT=7003 node server.js",
+    "start:witnesses": "concurrently \"npm run witness1\" \"npm run witness2\" \"npm run witness3\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0"
+  }
+}
