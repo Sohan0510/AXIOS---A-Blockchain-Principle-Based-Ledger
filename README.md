@@ -507,6 +507,36 @@ docker compose down -v           # Stop + delete database volume
 
 ## Screenshots & UI Flow
 
+### 🖥️ Main Page — Public Landing
+
+<p align="center">
+  <img src="Frontend/src/assets/images/Main page .png" alt="AXIOS Main Page" width="900" />
+</p>
+
+<p align="center"><em>Hero section with blockchain-verified land search, multi-language toggle, and light/dark theme support.</em></p>
+
+---
+
+### 🔍 Public Land Data Check
+
+<p align="center">
+  <img src="Frontend/src/assets/images/Public Land data check.png" alt="Public Land Data Check" width="900" />
+</p>
+
+<p align="center"><em>Public lookup showing live integrity status, Merkle root, land details, and interactive TomTom map — no login required.</em></p>
+
+---
+
+### 🛡️ Admin Dashboard
+
+<p align="center">
+  <img src="Frontend/src/assets/images/Admin Dashboard.png" alt="Admin Dashboard" width="900" />
+</p>
+
+<p align="center"><em>JWT-protected admin panel with live witness node status, record count, and quick-action cards.</em></p>
+
+---
+
 ### Public Flow
 ```
 Landing Page (Hero + Carousel + Search)
