@@ -510,9 +510,9 @@ docker compose down -v           # Stop + delete database volume
 ### Application Screenshots
 
 <p align="center">
-  <img src="Frontend/src/assets/images/Main page.jpg" alt="AXIOS Logo" width="280" />
-  <img src="Frontend/src/assets/images/Public Land data check.jpg" alt="AXIOS Logo" width="280" />
-  <img src="Frontend/src/assets/images/Admin Dashboard.jpg" alt="AXIOS Logo" width="280" />
+  <img src="Frontend/src/assets/images/Main page.png" alt="AXIOS Logo" width="280" />
+  <img src="Frontend/src/assets/images/Public Land data check.png" alt="AXIOS Logo" width="280" />
+  <img src="Frontend/src/assets/images/Admin Dashboard.png" alt="AXIOS Logo" width="280" />
 </p>
 
 ### Public Flow
