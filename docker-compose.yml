@@ -1,0 +1,82 @@
+services:
+  # ── MongoDB ────────────────────────────────────────────
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend (Express API) ──────────────────────────────
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - PORT=5050
+      - MONGO_URI=mongodb://mongo:27017/axios
+      - JWT_SECRET=your_jwt_secret_key
+      - JWT_EXPIRES_IN=1d
+      - WITNESS_SERVERS=http://witness1:7001,http://witness2:7002,http://witness3:7003
+    ports:
+      - "5050:5050"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── Frontend (Vite build → nginx) ─────────────────────
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: "http://localhost:5050"
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ── Witness Node 1 ────────────────────────────────────
+  witness1:
+    build:
+      context: ./Witness
+      dockerfile: Dockerfile
+    environment:
+      - PORT=7001
+    ports:
+      - "7001:7001"
+    restart: unless-stopped
+
+  # ── Witness Node 2 ────────────────────────────────────
+  witness2:
+    build:
+      context: ./Witness
+      dockerfile: Dockerfile
+    environment:
+      - PORT=7002
+    ports:
+      - "7002:7002"
+    restart: unless-stopped
+
+  # ── Witness Node 3 ────────────────────────────────────
+  witness3:
+    build:
+      context: ./Witness
+      dockerfile: Dockerfile
+    environment:
+      - PORT=7003
+    ports:
+      - "7003:7003"
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
