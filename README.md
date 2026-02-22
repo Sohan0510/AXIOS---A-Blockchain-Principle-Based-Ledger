@@ -507,6 +507,14 @@ docker compose down -v           # Stop + delete database volume
 
 ## Screenshots & UI Flow
 
+### Application Screenshots
+
+<p align="center">
+  <img src="Frontend/src/assets/images/Main page.jpg" alt="AXIOS Logo" width="280" />
+  <img src="Frontend/src/assets/images/Public Land data check.jpg" alt="AXIOS Logo" width="280" />
+  <img src="Frontend/src/assets/images/Admin Dashboard.jpg" alt="AXIOS Logo" width="280" />
+</p>
+
 ### Public Flow
 ```
 Landing Page (Hero + Carousel + Search)
