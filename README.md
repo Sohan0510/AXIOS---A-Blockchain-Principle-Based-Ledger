@@ -510,7 +510,7 @@ docker compose down -v           # Stop + delete database volume
 ### 🖥️ Main Page — Public Landing
 
 <p align="center">
-  <img src="Frontend/src/assets/images/Main page.png" alt="AXIOS Main Page" width="900" />
+  <img src="Frontend/src/assets/images/Main page .png" alt="AXIOS Main Page" width="900" />
 </p>
 
 <p align="center"><em>Hero section with blockchain-verified land search, multi-language toggle, and light/dark theme support.</em></p>
